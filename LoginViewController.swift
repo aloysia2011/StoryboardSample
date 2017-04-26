@@ -1,32 +1,29 @@
 //
-//  PinkViewController.swift
+//  LoginViewController.swift
 //  StoryboardSample
 //
-//  Created by SDS-022 on 2017. 4. 25..
+//  Created by SDS-021 on 2017. 4. 25..
 //  Copyright © 2017년 Mocapot. All rights reserved.
 //
 
 import UIKit
 
-class PinkViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    @IBOutlet var mySwitch: UISwitch!
+    @IBOutlet weak var idTextField: UITextField!
     
-    @IBAction func nextScene(_ sender: Any) {
+    @IBOutlet weak var pwTextField: UITextField!
+    
+    @IBAction func login(_ sender: Any) {
+        let userId = idTextField.text
+        let userPw = pwTextField.text
         
-        if mySwitch.isOn {
-            self.performSegue(withIdentifier: "greenway", sender: self)
-        } else {
-            self.performSegue(withIdentifier: "blueway", sender: self)
+        if let myId = userId, let myPw = userPw {
+            print("ID : \(myId) PW: \(myPw)")
         }
+        self.dismiss(animated: true, completion: nil)
         
     }
-    
-    @IBAction func close(_ sender: Any) {
-        print("Hello World")
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

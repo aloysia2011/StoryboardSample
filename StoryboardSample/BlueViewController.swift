@@ -13,6 +13,15 @@ class BlueViewController: UIViewController {
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func login(_ sender: Any) {
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "loginvc") {
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
